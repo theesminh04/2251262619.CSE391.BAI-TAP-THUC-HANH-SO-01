@@ -1,0 +1,37 @@
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.skill-bar {
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 12px;
+}
+
+.skill-progress {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    height: 100%;
+    width: 0; /* Bắt đầu từ 0 để JS kích hoạt animation */
+    transition: width 1s ease-out;
+}
+
+.skill-progress.animate {
+    /* Class này sẽ được thêm vào bằng JS */
+    width: var(--progress-width); 
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
